@@ -100,17 +100,8 @@ public class BurrowsWheeler {
     // if args[0] is "-", apply Burrows-Wheeler transform
     // if args[0] is "+", apply Burrows-Wheeler inverse transform
     public static void main(String[] args) {
-        //BinaryStdOut.write("!ARDRCAAAABB");
-        //BinaryStdOut.close();
-        if (args.length != 1)
-            throw new IllegalArgumentException("Expected + or -\n");
-        else if (args[0].equals("-"))
-            transform();
-        else if (args[0].equals("+"))
-            inverseTransform();
-        else {
-            String msg = "Unknown argument: " + args[0] + "\n";
-            throw new IllegalArgumentException(msg);
-        }
+        if (args[0].equals("-")) transform();
+        else if (args[0].equals("+")) inverseTransform();
+        else throw new IllegalArgumentException();
     }
 }
